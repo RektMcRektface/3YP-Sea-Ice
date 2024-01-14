@@ -1,5 +1,6 @@
 clear; clc; close all
 
+rng(2021)
 %% Set up parameters
 
 % Radar parameters
@@ -23,7 +24,7 @@ resSurface = 2; % Resolution of sea surface (m)
 [lambda,c] = freq2wavelen(freq);
 
 % Setup sensor trajectory and simulation times
-rdrht = 300;                                   % Radar platform height (m) 
+rdrht = 100;                                   % Radar platform height (m) 
 rdrpos = [-L/2 0 rdrht];                       % Radar position [x y z] (m)
 numPulses = 1024;                              % Number of pulses 
 scenarioUpdateTime = 1/prf;                    % Scenario update time (sec) 
@@ -62,7 +63,7 @@ helperSeaSurfacePlot(x,y,z,rdrpos)
 actSigHgt = helperEstimateSignificantWaveHeight(x,y,z);
 
 expectedSigHgt = [1.25 2.5]; % Sea state 4
-actSigHgt >= expectedSigHgt(1) && actSigHgt <= expectedSigHgt(2);
+actSigHgt >= expectedSigHgt(1) && actSigHgt <= expectedSigHgt(2)
 
 % Plot sea surface motion 
 plotTime = 0:0.5:10; % Plot time (sec)
@@ -99,7 +100,7 @@ rdrplat.Sensors = rdr;
 % Collect clutter returns with the clutterGenerator
 clutterGenerator(scene,rdr); 
 
-%% Run RADAR return simulation
+%% Run RADAR return simulationz
 
 % Run the scenario
 numSamples = 1/prf*fs;
