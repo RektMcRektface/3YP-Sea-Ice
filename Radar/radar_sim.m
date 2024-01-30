@@ -1,3 +1,8 @@
+% A script to model a moving sea surface and simulate RADAR returns from it
+% Author: PH
+% Based on example 'Simulating Radar Returns from Moving Sea Surfaces' by
+% mathworks
+
 clear; clc; close all
 
 rng(2021)

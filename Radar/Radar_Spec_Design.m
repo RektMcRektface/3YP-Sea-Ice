@@ -1,3 +1,7 @@
+% A script to find the necessary parameters for an SAR RADAR system given
+% certain parameters
+% Author: PH
+
 clear; clc; close all
 
 %% Basic requirements
