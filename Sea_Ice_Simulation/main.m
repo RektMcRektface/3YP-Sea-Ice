@@ -1,0 +1,43 @@
+%Setting parameters, creating grid
+gridSize = [100,100];
+vectSpacing = 25;
+vectSpacing2 = 10;
+vectSpacing3 = 5;
+
+grid = createGrid(gridSize, vectSpacing);
+noiseMap = generateNoiseMap(gridSize,grid,vectSpacing);
+%noiseMap = normaliseMap(noiseMap);
+noiseMap = scaleMap(noiseMap);
+
+grid2 = createGrid(gridSize, vectSpacing2);
+noiseMap2 = generateNoiseMap(gridSize,grid2,vectSpacing2);
+%noiseMap2 = normaliseMap(noiseMap2);
+noiseMap2 = scaleMap(noiseMap2);
+
+grid3 = createGrid(gridSize, vectSpacing3);
+noiseMap3 = generateNoiseMap(gridSize,grid3, vectSpacing3);
+noiseMap3 = scaleMap(noiseMap3);
+
+sourceMap = genSource(gridSize);
+%sourceMap = normaliseMap(sourceMap);
+sourceMap = scaleMap(sourceMap);
+
+
+
+
+totalMap = 1.6*sourceMap + 0.4*noiseMap + 0.3*noiseMap2 + 0.2*noiseMap3;
+totalMap = scaleMap(totalMap);
+totalMap1 = discreteMap(totalMap);
+totalMap1 = rot90(totalMap1);
+totalMap1 = rot90(totalMap1);
+totalMap1 = rot90(totalMap1);
+
+totalMap1(:, 1:10) = 0;
+
+
+azimuth = 0:119;
+azimuth = (azimuth/180)*pi;
+polarRectified = RadarPolarToCartesian(azimuth, totalMap1, 1, 1, 200, 0);
+imagesc(polarRectified);
+figure;
+imagesc(totalMap1);
