@@ -74,7 +74,7 @@ xline(rngswath,'-.',{[num2str(round(rngswath,2)),' m']}); % Selected range swath
 xlabel('Swath Length (m)')
 ylabel('Antenna Elevation Dimension (m)')
 
-% We can see that this gives us an antenna elevation of 3.1m
+% We can see that this gives us our antenna elevation 
 del = 0.31
 
 % We can find the real beamwidth and antenna gain

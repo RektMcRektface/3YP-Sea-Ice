@@ -70,7 +70,7 @@ actSigHgt = helperEstimateSignificantWaveHeight(x,y,z);
 expectedSigHgt = [1.25 2.5]; % Sea state 4
 actSigHgt >= expectedSigHgt(1) && actSigHgt <= expectedSigHgt(2)
 
-% Plot sea surface motion 
+% Plot sea surface motion
 plotTime = 0:0.5:10; % Plot time (sec)
 helperSeaSurfaceMotionPlot(x,y,seaSurf,plotTime);
 
