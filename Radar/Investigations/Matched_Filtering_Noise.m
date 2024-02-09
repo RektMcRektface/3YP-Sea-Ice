@@ -2,11 +2,13 @@
 % Author: PH
 
 clear; clc; close all
+rng(2002);
 
 % Define Parameters
 pw = 1e-4;
 prf = 5e3;
 fs = 1/1e7;
+N = 9;
 
 % Create chirp
 chirped_waveform = phased.LinearFMWaveform('PulseWidth',pw,'PRF',prf,...
@@ -14,6 +16,7 @@ chirped_waveform = phased.LinearFMWaveform('PulseWidth',pw,'PRF',prf,...
     'SweepBandwidth',1e5);
 chirp = chirped_waveform();
 chirp = [zeros(numel(chirp)/2,1) ; chirp];
+chirp = chirp + N*(randn(length(chirp),1) + 1j*randn(length(chirp),1));
 chirp_filter = phased.MatchedFilter('Coefficients', getMatchedFilter(chirped_waveform));
 
 % Get timescale
@@ -22,6 +25,7 @@ t = linspace(0,3*pw,numel(chirp));
 % Create beep
 beep_waveform = ones(numel(chirp)/3,1);
 beep = [zeros(numel(chirp)/3,1) ; beep_waveform ; zeros(numel(chirp)/3,1)];
+beep = beep + N*(randn(length(beep),1) + 1j*randn(length(beep),1));
 
 % Plot original signals
 figure; subplot(2,1,1)
