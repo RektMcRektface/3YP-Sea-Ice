@@ -16,7 +16,7 @@ chirped_waveform = phased.LinearFMWaveform('PulseWidth',pw,'PRF',prf,...
     'SweepBandwidth',1e5);
 chirp = chirped_waveform();
 chirp = [zeros(numel(chirp)/2,1) ; chirp];
-chirp = chirp + N*(randn(length(chirp),1) + j*randn(length(chirp),1));
+chirp = chirp + N*(randn(length(chirp),1) + 1j*randn(length(chirp),1));
 chirp_filter = phased.MatchedFilter('Coefficients', getMatchedFilter(chirped_waveform));
 
 % Get timescale
@@ -31,14 +31,14 @@ beep = beep + N*(randn(length(beep),1));
 figure; subplot(2,1,1)
 plot(t,real(chirp))
 axis('tight')
-title('Chirped signal')
+title('Chirped signal with added Gaussian noise')
 xlabel('Time')
 ylabel('Signal')
 
 subplot(2,1,2)
 plot(t,real(beep))
 axis('tight')
-title('Beeped signal')
+title('Beeped signal with added Gaussian noise')
 xlabel('Time')
 ylabel('Signal')
 
