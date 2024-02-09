@@ -40,7 +40,7 @@ ylabel('Signal')
 
 % Plot filtered signals
 figure; subplot(2,1,1)
-plot(t,chirp_filter(chirp))
+plot(t,real(chirp_filter(chirp)))
 axis('tight')
 title('Chirp after matched filtering')
 xlabel('Time')
