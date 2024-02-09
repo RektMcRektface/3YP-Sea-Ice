@@ -1,0 +1,9 @@
+function sourceMap = genSource(gridSize)
+    %Function to generate a source.
+    sourceMap = zeros(gridSize(1), gridSize(2));
+    for i = 10:(gridSize(1))
+        for j = 1:(gridSize(2))
+            %sourceMap(i+1,j+1) = sin(((pi*(i/(gridSize(1)-1))))) * sin(0.5*pi*(j/(gridSize(2)-1)));
+            sourceMap(i,j) = i;
+        end
+    end
