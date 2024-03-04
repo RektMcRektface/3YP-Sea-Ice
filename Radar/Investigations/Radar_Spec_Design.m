@@ -4,7 +4,7 @@
 
 clear; clc; close all
 
-%% Basic requirements
+% Basic requirements:
 % Specifications
 slantrngres = 1;        % Required slant range resolution (m)
 azres = 1;              % Required azimuth resolution (m)
@@ -61,7 +61,7 @@ striplen = 75
 %% Antenna Elevation Dimensions
 
 % Investigate different antenna elevations, using a swath range of 2.4km
-rngswath = 2.4e3;
+rngswath = 1e3;
 delv = [0.15 0.2 0.25 0.3 0.35];    % Elevation Dimensions (m)
 rangeswathv = zeros(1,numel(delv));
 for i=1:numel(delv)
