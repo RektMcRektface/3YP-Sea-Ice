@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map - Arctic Exploration</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="window.location.href='index.html';">Home</button> <!-- Optional, if you have a landing page -->
+        <button onclick="window.location.href='map.html';">Map</button>
+        <button onclick="window.location.href='drone-status.html';">Drone Status</button>
+        <button onclick="window.location.href='weather-status.html';">Weather Status</button>
+    </div>
+    
+    <h2>Arctic Map</h2>
+    <div id="map" style="height: 400px;"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="map.js"></script> <!-- Your custom JS for the map -->
+</body>
+</html>

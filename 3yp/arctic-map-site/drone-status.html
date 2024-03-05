@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Status - Arctic Exploration</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="window.location.href='index.html';">Home</button> <!-- Optional, if you have a landing page -->
+        <button onclick="window.location.href='map.html';">Map</button>
+        <button onclick="window.location.href='drone-status.html';">Drone Status</button>
+        <button onclick="window.location.href='weather-status.html';">Weather Status</button>
+    </div>
+    
+    <!-- <h2>Drone Status and Arctic Sea Danger Map</h2> -->
+    <!-- <div id="drone-map" style="height: 400px;"></div> -->
+
+    <div id="content-container">
+        <div id="map-container">
+            <h2>Arctic Map</h2>
+            <div id="drone-map" style="height: 400px;"></div>
+        </div>
+        <!-- Drone Status Section -->
+        <div class="drone-statuses-container">
+            <div class="drone-status" id="drone1-status">
+                <h3>Drone 1 Status</h3>
+                <p>Battery: <span id="drone1-battery">Loading...</span></p>
+                <p>Status: <span id="drone1-current-status">Loading...</span></p>
+                <p>Speed: <span id="drone1-speed">Loading...</span></p>
+                <p>Height: <span id="drone1-height">Loading...</span></p>
+                <p>Signal Strength: <span id="drone1-signal-strength">Loading...</span></p>
+                <p>Task Completed: <span id="drone1-task">Loading...</span></p>
+            </div>
+            <div class="drone-status" id="drone2-status">
+                <h3>Drone 2 Status</h3>
+                <p>Battery: <span id="drone2-battery">Loading...</span></p>
+                <p>Status: <span id="drone2-current-status">Loading...</span></p>
+                <p>Speed: <span id="drone2-speed">Loading...</span></p>
+                <p>Height: <span id="drone2-height">Loading...</span></p>
+                <p>Signal Strength: <span id="drone2-signal-strength">Loading...</span></p>
+                <p>Task Completed: <span id="drone2-task">Loading...</span></p>
+            </div>
+            <div class="drone-status" id="drone3-status">
+                <h3>Drone 3 Status</h3>
+                <p>Battery: <span id="drone3-battery">Loading...</span></p>
+                <p>Status: <span id="drone3-current-status">Loading...</span></p>
+                <p>Speed: <span id="drone3-speed">Loading...</span></p>
+                <p>Height: <span id="drone3-height">Loading...</span></p>
+                <p>Signal Strength: <span id="drone3-signal-strength">Loading...</span></p>
+                <p>Task Completed: <span id="drone3-task">Loading...</span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Leaflet Heatmap Plugin (check for the latest version or the one that fits your needs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    <script src="drone-status.js"></script> <!-- Your custom JS for drone status and the danger map -->
+</body>
+</html>

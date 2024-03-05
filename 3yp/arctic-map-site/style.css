@@ -1,0 +1,77 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.navbar {
+    position: fixed; /* Make the navbar fixed to the top of the screen */
+    top: 0; /* Align the navbar to the top */
+    width: 100%; /* Ensure the navbar spans the full width of the viewport */
+    background-color: white; /* Give the navbar a background color */
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+    display: flex; /* Use flexbox for easy horizontal alignment of buttons */
+    justify-content: center; /* Center the buttons within the navbar */
+    padding: 10px 0; /* Add some vertical padding */
+}
+
+body {
+    padding-top: 60px;
+     /* Add padding to the top of the body to prevent content from being hidden behind the navbar */
+}
+
+.navbar button {
+    color: white; /* Button text color */
+    background-color: #666; /* Button background color */
+    border: none; /* Remove borders from buttons */
+    padding: 10px 20px; /* Add some padding inside the buttons */
+    margin: 0 10px; /* Add some space between buttons */
+    cursor: pointer; /* Change mouse cursor to indicate clickable items */
+    border-radius: 5px; /* Optionally round the button corners */
+}
+
+.navbar button:hover {
+    background-color: #555; /* Button hover state */
+}
+
+
+#content-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure children do not wrap */
+    height: 100vh; /* Adjust height as needed */
+}
+
+#map-container, #drone-statuses-container {
+    height: 100%; /* Make children fill the container height */
+}
+
+#map-container {
+    width: 70%; /* Adjust based on preference */
+    height: calc(100vh - 60px); /* Adjust height if necessary, accounting for navbar */
+    padding-right: 20px;
+}
+
+#drone-statuses-container {
+    width: 30%; /* Adjust based on preference */
+    overflow-y: auto; /* Adds scroll if content exceeds height */
+    padding: 0 20px;
+}
+
+#map {
+    height: 100%; /* Ensure the map fills its container */
+}
+
+img {
+    display: block;
+    width: 30%;
+    max-width: 600px;
+    margin: auto;
+}
